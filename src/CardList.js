@@ -5,11 +5,7 @@ const CardList = ({robots}) => {
     const CardComponent = robots.map( (user, index) => {
                 return <Card id={user[index].id} name={user[index].name} email={user[index].email} />
         })
-    return (
-        <div>
-            {CardComponent};
-        </div>
-    );
+    return ( {CardComponent} );
 }
 
 export default CardList;
