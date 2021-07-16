@@ -8,10 +8,18 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            robots: robots,
+            robots: [],
             searchField: ''
         }
     }
+
+    componentDidMount() {
+        this.setState( {robots: robots} )
+    }
+
+    /* use arrow func as good practice when using custom methods
+    else it throws some weird errors
+    LOOk into this! */
     onSearchChange = (event) => {
         this.setState( {searchField: event.target.value} )
         
