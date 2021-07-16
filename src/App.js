@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
-import { robots } from './robots';
 import SearchBox from './SearchBox';
+import Scroll from './Scroll'
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.setState( {robots: robots} )
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => this.setState( {robots: users} ))   
     }
 
     /* use arrow func as good practice when using custom methods
@@ -26,14 +28,17 @@ class App extends Component {
     }
     render() {
         const filteredRobots = this.state.robots.filter (
-            robotTobeReturned => {
-            return robotTobeReturned.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+            robots => {
+            return robots.name.toLowerCase()
+                    .includes(this.state.searchField.toLowerCase());
         })
         return (
             <div className = 'tc'>
                 <h1><strong>Robot Friends</strong></h1>
                 <SearchBox searchChange={this.onSearchChange} />
-                <CardList robots = {filteredRobots}/>
+                <Scroll>
+                    <CardList robots = {filteredRobots}/>
+                </Scroll>
             </div>
         );
     }
