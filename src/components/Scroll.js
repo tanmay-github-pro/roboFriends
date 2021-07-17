@@ -4,7 +4,7 @@ const Scroll = (props) => {
     return (
         // returning object within javascript expression
         // that's why 2 curly brackets
-        <div style={{overflowY: 'scroll', border:'1px solid black', height: '600px'}}>
+        <div style={{overflowY: 'scroll', border:'1px solid black', height: '520px'}}>
             {props.children}
         </div>
     );
