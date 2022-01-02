@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    /* grid-gap: 20px; */
+    grid-gap: 3.5rem;
+    /* auto fill basically fills in more items if the viewing size is bigger */
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); /*Really Important */
+                                            /*1st number defines 
+                                            how many times you want to repeat*/
+    /* grid-template-columns: auto; auto means(fill up whatever space it has) size of content it applies to all below rows or columns */
+    grid-template-rows: 1fr;
+    justify-items: stretch;    /*defult is stretch*/
+    padding: 4em;
+
+    /* background-color: black; */
+    min-height: 630px;
+}
