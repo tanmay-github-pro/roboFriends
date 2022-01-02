@@ -9,6 +9,7 @@ h1 {
     width: auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     font-size: calc(10px + 2vmin);
