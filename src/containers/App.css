@@ -1,4 +1,23 @@
 h1 {
     font-weight: 200;
-    color: #0ccac4;
+    /* color: #0ccac4; */
+}
+
+.App-header {
+    /* background-color: #282c34; */
+    /* min-height: 100%; */
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 0.5rem 4rem;
+    /* border: 1px solid black; */
+  }
+
+.header_item {
+    display: flex;
+    justify-content: center;
 }
